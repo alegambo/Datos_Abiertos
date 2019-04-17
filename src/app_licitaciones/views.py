@@ -55,3 +55,12 @@ def load_index(request):
     :return: Render index.html
     """
     return render(request, 'index.html')
+
+
+def load_information(request):
+    """
+    This function render the information.html
+    :param request:
+    :return: Render information.html
+    """
+    return render(request, 'information.html')
