@@ -24,7 +24,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'j!u0k+3x&41&*@dsyh+ts_c0rc1cvqep3(re)%@pc9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.herokuapp.com']
+ALLOWED_HOSTS = ['opendatacrweb.herokuapp.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
