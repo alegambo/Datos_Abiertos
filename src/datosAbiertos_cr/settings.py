@@ -24,7 +24,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'j!u0k+3x&41&*@dsyh+ts_c0rc1cvqep3(re)%@pc9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.herokuapp.com']
+ALLOWED_HOSTS = ['opendatacrweb.herokuapp.com']
 
 
 # Application definition
@@ -121,6 +121,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 django_heroku.settings(locals())
