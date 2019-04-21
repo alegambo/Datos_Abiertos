@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.getenv('SECRET_KEY', 'j!u0k+3x&41&*@dsyh+ts_c0rc1cvqep3(re)%@pc91*iy9jry'
                        )
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['opendatacrweb.herokuapp.com']
 
