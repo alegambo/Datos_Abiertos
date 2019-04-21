@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+
+{% block content%}
+
+
+<div align="center">
+
+    <p> Trabajando con las <a
+            href="http://datosabiertos.presidencia.go.cr/dataviews/112440/licitaciones-adjudicadas-de-las-instituciones-publicas-para-el-periodo-2014-2015/">
+        Apis de licitaciones</a> <br><br>
+        Basado en el Trabajo en R que han Venido realizando <a href="https://github.com/ronnyhdez"> Ronny Hernandez </a>
+        y <a
+                href="https://github.com/ecamo19"> Erick Calderon</a> el cual se puede ver en <a
+                href="https://github.com/datos-abiertos-cr">en este perfil de git hub</a>
+    </p>
+</div>
+<div align="center">
+    <p> Se utiliza python con las librerias <a href="http://docs.python-requests.org/en/master/"> Request</a>, <a
+            href="https://docs.python.org/2/library/json.html">json</a> y <a href="https://pandas.pydata.org/">
+        Pandas</a> para el manejo de datos</p><br>
+    <p> Mediante la Libería <a href="https://pandas.pydata.org/"> Pandas</a> se logra crear un <a
+            href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html">DataFrame</a> que
+        lea los
+        datos en formato Json y los convierta en datos en una tabla legible </p><br>
+
+    <p> Mediante la funcion <strong>Shape</strong> podemos obtener las dimensiones del DataFrame con el formato de
+        filas, columnas. En
+        nuestro caso al aplicar la funcion Shape (<strong>dataframe.shape</strong>) nos genera el siguiente resultado:
+    </p><br>
+
+    <p> {{ dimensiones }}</p><br>
+    <p> Con esto nos damos por enterados que el DataFrame posee 49 filas y 7 columnas, ademas podemos obtener una
+        información básica del como esta constituído ese dataFrame mediante la función
+        info(<strong>DataFrame.info()</strong>)</p><br>
+
+    <p> {{ info }}</p><br>
+
+    <p> Como vemos la informacion que nos devuelve la funcion puede ser un poco confusa y compleja para personas no
+        acostumbradas a lidiar con los bufer y con las salidas en pantalla que proporciona Python, afortunadamente
+        tenemos otras funciones dentro de la librería que nos permiten realizar ciertas búsquedas de información por
+        ejemplo tenemos una funcion que nos permiten hacer un listado de los nombres de las columnas de nuestro
+        dataFrame (<strong>DataFrame.columns.values</strong>) lo cual nos genera la siguiente salida:</p><br>
+
+    <p>
+        {% for colum in columnas %}
+    <li>{{ colum|safe }}</li>
+
+    {% endfor %}
+
+    </p><br>
+</div>
+
+<div align="center">
+    <p> Teniendo un panorama algo claro del dataframe podemos imprimir el DataFrame en este caso en formato html para
+        que
+        pueda ser leído por esta página mediante la funcion <strong>DataFrame.to_html()</strong> el cual genera la
+        siguiente salida: </p><br><br>
+
+    {% autoescape off %}{{ tablahtmlT }}{% endautoescape %}
+    <br>
+</div>
+
+<div align="center">
+
+    <p> La misma librería se encarga de poner una enumeración para cada fila, asi como se encarga de "pintar" los
+        datos como una tabla de formato html
+    </p><br><br>
+
+</div>
+
+
+{% endblock %}
